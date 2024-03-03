@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-slab-v34-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/roboto-slab-v34-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/roboto-slab-v34-latin-700.woff2") format("woff2");
+}
+
+#root {
+  --primary-color: #ff6464;
+  --transition-time: 0.3s;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px dotted var(--primary-color);
+  outline-offset: 3px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+@layer components {
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  #root {
+    @apply flex flex-col;
+  }
+
+  .max-container {
+    max-width: 100%;
+    @apply px-[50px] mx-auto w-[1200px];
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    a {
+      color: #222;
+      transition: color var(--transition-time);
+      font-weight: 500;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #222;
+    transition: color var(--transition-time);
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  .create-page__title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+    background: var(--primary-color);
+    border: 0;
+    color: #ffffff;
+    border-radius: 2px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    margin-top: 5rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover {
+      background-color: rgba(255, 100, 100, 0.8);
+    }
+  }
+}
